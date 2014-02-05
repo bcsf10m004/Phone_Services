@@ -1,0 +1,191 @@
+﻿@model Project.Phone
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ModelOutput</title>
+    <script src="~/Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $.fn.extend({
+            tableAddCounter: function (options) {
+
+                // set up default options 
+                var defaults = {
+                    title: '#',
+                    start: 1,
+                    id: false,
+                    cssClass: false
+                };
+
+                // Overwrite default options with user provided
+                var options = $.extend({}, defaults, options);
+
+                return $(this).each(function () {
+                    // Make sure this is a table tag
+                    if ($(this).is('table')) {
+
+                        // Add column title unless set to 'false'
+                        if (!options.title) options.title = '';
+                        $('th:first-child, thead td:first-child', this).each(function () {
+                            var tagName = $(this).prop('tagName');
+                            $(this).before('<' + tagName + ' rowspan="' + $('thead tr').length + '" class="' + options.cssClass + '" id="' + options.id + '">' + options.title + '</' + tagName + '>');
+                        });
+
+                        // Add counter starting counter from 'start'
+                        $('tbody td:first-child', this).each(function (i) {
+                            $(this).before('<td>' + (options.start + i) + '</td>');
+                        });
+
+                    }
+                });
+            }
+        });
+        })(jQuery);
+
+        $(document).ready(function () {
+            $('.table').tableAddCounter();
+            $.getScript("http://code.jquery.com/ui/1.9.2/jquery-ui.js").done(function (script, textStatus) { $('tbody').sortable();$(".alert-info").alert('close');$(".alert-success").show(); });
+        })
+    </script>
+
+
+    <link href="~/Content/templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<script src="~/Scripts/SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
+<script src="~/Scripts/SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+
+
+<link rel="stylesheet" type="text/css" href="~/Content/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+<script type="text/javascript" src="~/Scripts/ddsmoothmenu.js">
+
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+    ddsmoothmenu.init({
+        mainmenuid: "templatemo_menu", //menu DIV id
+        orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+        classname: 'ddsmoothmenu', //class added to menu's outer DIV
+        //customtheme: ["#1c5a80", "#18374a"],
+        contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+    })
+
+</script> 
+<link href="~/Content/SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
+
+
+
+
+</head>
+<body id="home">
+    <div id="templatemo_header_wrapper">
+    <div id="templatemo_header">
+        <div id="site_title"><a href="#" rel="nofollow">SmartPhone<span> Services</span></a></div>
+        <div id="templatemo_menu" class="ddsmoothmenu">
+            <ul>
+                <li><a href="/Home/index">Home</a></li>
+                <!--li><a href="distortion_effect.html">Distortion</a></li!-->
+                <li><a href="/Home/signup">Sign Up</a>
+                    
+                </li>
+                <li><a href="/Home/portfolio">Phones</a>
+                    <ul>
+						<li><span class="top"></span><span class="bottom"></span></li>
+                        <li><a rel="nofollow" href="/Home/price">Search by price</a></li>
+                        <li><a rel="nofollow" href="/Home/searchmodel">Search by model</a></li>
+                        <li><a rel="nofollow" href="/Home/Searchcompany">Search by company</a></li>
+                        
+                  	</ul>
+                </li>
+                <li><a href="/Home/admin">Admin</a></li>
+                <li><a href="/Home/users" class="selected">Users</a></li>
+            </ul>
+            <br style="clear: left" />
+        </div> <!-- end of templatemo_menu -->
+    </div> <!-- END of header -->
+</div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-info">
+                Please Wait...</div>
+            <div class="alert alert-success" style="display:none;">
+                <span class="glyphicon glyphicon-ok"></span> Model Found</div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Company
+                        </th>
+                        <th>
+                            Model
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Rating
+                        </th>
+                        <th>
+                            Comments
+                        </th>
+                        <th>
+                            Availability
+                        </th>
+                        <th>
+                            Features
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="active">
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
