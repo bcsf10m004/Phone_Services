@@ -91,7 +91,7 @@ ddsmoothmenu.init({
         <h2>Sign Up</h2>
         @using (Html.BeginForm()) {
        @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true)
+        //    @Html.ValidationSummary(true)
         
                 <!--form id="form1" name="form1" method="post" action=""!-->
           
@@ -173,14 +173,16 @@ ddsmoothmenu.init({
           </tr>
         </table>
         <p>&nbsp;</p>
-        <p>
+
+       <p>
           <input type="submit" name="b1" id="b1" value="Submit"  />
         </p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
       <!--/!--form!-->
         }
-
+ 
+   
         <p>&nbsp;</p>
       
             
@@ -227,6 +229,10 @@ var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3");
 </script>
 
 
+    @Scripts.Render("~/bundles/jqueryval")
+
 
 </body>
 </html>
+
+  
